@@ -4,17 +4,22 @@ import { nodePolyfills } from 'vite-plugin-node-polyfills';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
-  plugins: [react(), nodePolyfills()],
-  base: '/my-twa/',
+  plugins: [
+    react(),
+    nodePolyfills(),
+    VitePWA({})
+  ],
+  base: '/my-twa/', // Убедитесь, что это корректный публичный путь
   build: {
     rollupOptions: {
-      external: ['/my-twa/assets/index-Db9LfXqK.js'],
+      input: '/index.html', // Указываем исходный index.html
       output: {
-        assetFileNames: `assets/[name]-[hash][extname]`
+        assetFileNames: `assets/[name]-[hash][extname]` // Формат имен файлов
       }
     }
   }
 });
+
 
 
 // // https://vitejs.dev/config/
