@@ -4,7 +4,7 @@ import { nodePolyfills } from 'vite-plugin-node-polyfills';
 
 export default defineConfig({
   plugins: [react(), nodePolyfills()],
-  base: '/my-twa/' // Указываем поддиректорию, соответствующую названию репозитория на GitHub
+  base: '/my-twa/',
 });
 
 // // https://vitejs.dev/config/
